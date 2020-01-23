@@ -1,0 +1,48 @@
+docker.io/openshiftroadshow/parksmap-katacoda:1.2.0
+https://github.com/openshift-roadshow/nationalparks-katacoda
+
+
+
+odo
+odo project create <project-name>
+odo catalog list components
+{
+
+youll use cd ~/backend, ls, mvm package to Build the backend source files with Maven to create a jar file:
+
+With the backend's .jar file built, we can use odo to deploy and run it atop the Java application server we saw earlier in the catalog. The command below creates a component configuration of component-type java named backend:
+
+odo create java:8 backend --binary target/wildwest-1.0.jar
+
+As the component configuration is created, odo will print the following:
+
+✓  Validating component [6ms]
+Please use `odo push` command to create the component with source deployed
+
+}
+
+odo push
+
+{
+cd ~/frontend
+ls
+odo create nodejs frontend
+odo push
+}
+
+odo link backend --component frontend --port 8080
+
+odo url create frontend --port 8080
+
+odo push
+
+{
+cd ~/frontend
+odo watch
+sed -i "s/Wild West/My App/" index.html
+
+}
+
+odo url list
+
+
