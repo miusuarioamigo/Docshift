@@ -1,7 +1,7 @@
 docker.io/openshiftroadshow/parksmap-katacoda:1.2.0
 https://github.com/openshift-roadshow/nationalparks-katacoda
 
-
+openshiftkatacoda/blog-django-py
 
 odo
 odo project create <project-name>
